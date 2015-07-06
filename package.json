@@ -1,0 +1,15 @@
+{
+  "name": "to-anything",
+  "version": "1.0.0",
+  "description": "Sanitize your user input by safely converting the input to strings, integers, and decimals, preventing injecton attacks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "author": "Daniel Logue",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
+  }
+}
