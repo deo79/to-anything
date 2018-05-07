@@ -1,6 +1,6 @@
 {
   "name": "to-anything",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sanitize your user input by safely converting the input to strings, integers, and decimals, preventing injecton attacks.",
   "main": "index.js",
   "scripts": {

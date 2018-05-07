@@ -36,9 +36,13 @@ describe('String converter', function() {
 		});
 	});
 	describe('integer to string conversion', function() {
-		it('takes an integer and turns it into a string', function() {
+		it('takes an integer (123) and turns it into a string', function() {
 			var str = to.string(123);
 			expect(str).to.equal('123');
+		});
+		it('takes an integer (-1) and turns it into a string', function() {
+			var str = to.string(-1);
+			expect(str).to.equal('-1');
 		});
 	});
 	describe('decimal to string conversion', function() {
@@ -55,6 +59,18 @@ describe('String converter', function() {
 		it('takes false and turns it into "false"', function() {
 			var str = to.string(false);
 			expect(str).to.equal('false');
+		});
+	});
+	describe('undefined to string conversion', function() {
+		it('takes undefined and turns it into ""', function() {
+			var str = to.string(undefined);
+			expect(str).to.equal('');
+		});
+	});
+	describe('null to string conversion', function() {
+		it('takes null and turns it into ""', function() {
+			var str = to.string(null);
+			expect(str).to.equal('');
 		});
 	});
 });
@@ -84,6 +100,18 @@ describe('Integer converter', function() {
 		it('takes a partially non-numeric string and returns the number', function() {
 			var out = to.integer('godzi11a');
 			expect(out).to.equal(11);
+		});
+		it('takes "-1" and returns the number', function() {
+			var out = to.integer('-1');
+			expect(out).to.equal(-1);
+		});
+		it('takes "-$5,631.00" and returns the number', function() {
+			var out = to.integer('-$5,631.00');
+			expect(out).to.equal(-5631.00);
+		});
+		it('takes " -$5,631.00" and returns the number', function() {
+			var out = to.integer(' -$5,631.00');
+			expect(out).to.equal(-5631.00);
 		});
 	});
 });
